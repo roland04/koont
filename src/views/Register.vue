@@ -7,13 +7,13 @@
 
 <script>
 // @ is an alias to /src
-import HomePage from "@/components/HomePage.vue";
+import RegisterPage from "@/components/RegisterPage.vue";
 
 export default {
-  name: "home",
+  name: "register",
   components: {
     /* eslint-disable vue/no-unused-components */
-    HomePage
+    RegisterPage
   }
 };
 </script>

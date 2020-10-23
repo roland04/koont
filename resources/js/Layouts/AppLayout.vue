@@ -17,6 +17,9 @@
                             <jet-nav-link :href="route('dashboard')" :active="$page.currentRouteName == 'dashboard'">
                                 Dashboard
                             </jet-nav-link>
+                            <jet-nav-link :href="route('categories.index')" :active="$page.currentRouteName == 'categories.index'">
+                                Categorías
+                            </jet-nav-link>
                         </div>
                     </div>
 
@@ -120,6 +123,9 @@
                 <div class="pt-2 pb-3 space-y-1">
                     <jet-responsive-nav-link :href="route('dashboard')" :active="$page.currentRouteName == 'dashboard'">
                         Dashboard
+                    </jet-responsive-nav-link>
+                    <jet-responsive-nav-link :href="route('categories.index')" :active="$page.currentRouteName == 'categories.index'">
+                        Categorías
                     </jet-responsive-nav-link>
                 </div>
 
@@ -253,7 +259,23 @@
         computed: {
             path() {
                 return window.location.pathname
+            },
+            message() {
+                return this.$page.flash.message
             }
+        },
+
+        watch: {
+            message: async function (val) {
+                if (val) {
+                    await Toast.fire({
+                        icon: 'success',
+                        title: val,
+                        showConfirmButton: false,
+                    })
+                    this.$page.flash.message = '';
+                }
+            } 
         }
     }
 </script>

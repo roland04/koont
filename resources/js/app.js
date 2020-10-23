@@ -12,6 +12,13 @@ Vue.use(InertiaForm);
 Vue.use(PortalVue);
 
 const app = document.getElementById('app');
+const sweetAlert = require('sweetalert2').default;
+window.Toast = sweetAlert.mixin({
+    toast: true,
+    position: 'top-right',
+    timer: 3000,
+    timerProgressBar: true,
+})
 
 new Vue({
     render: (h) =>

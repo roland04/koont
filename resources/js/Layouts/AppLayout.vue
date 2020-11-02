@@ -20,6 +20,9 @@
                             <jet-nav-link :href="route('categories.index')" :active="$page.currentRouteName == 'categories.index'">
                                 Categorías
                             </jet-nav-link>
+                            <jet-nav-link :href="route('concepts.index')" :active="$page.currentRouteName == 'concepts.index'">
+                                Conceptos
+                            </jet-nav-link>
                         </div>
                     </div>
 
@@ -126,6 +129,9 @@
                     </jet-responsive-nav-link>
                     <jet-responsive-nav-link :href="route('categories.index')" :active="$page.currentRouteName == 'categories.index'">
                         Categorías
+                    </jet-responsive-nav-link>
+                    <jet-responsive-nav-link :href="route('concepts.index')" :active="$page.currentRouteName == 'concepts.index'">
+                        Conceptos
                     </jet-responsive-nav-link>
                 </div>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
@@ -39,8 +40,9 @@ class CategoryController extends Controller
             'name' => ['required'],
         ])->validate();
   
-        Category::create($request->all());
-  
+        $category = Category::create($request->all());
+        $request->user()->categories()->save($category);
+
         return redirect()->back()
                     ->with('message', 'Categoría creada.');
     }
